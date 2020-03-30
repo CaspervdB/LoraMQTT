@@ -1,3 +1,4 @@
 ttn
 flask
 requests
+uwsgi
