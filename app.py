@@ -1,5 +1,6 @@
 import ttn
 import requests
+from flask import Flask
 
 # ------BEGIN MQTT TTN PART------ #
 
@@ -29,5 +30,11 @@ def add_meting(nodeID, temperature, humidity, datetime):
     print(r.status_code)
 
 
-while True:
-    pass
+app = Flask(__name__)
+
+@app.route("/")
+def landing():
+    return "Server is running!"
+	
+if __name__ == '__main__':
+    app.run(debug=False)
