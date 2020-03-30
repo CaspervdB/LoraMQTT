@@ -13,6 +13,7 @@ def uplink_callback(msg, client):
     humidity = msg.payload_fields.humidity
     temperature = msg.payload_fields.temperature
     datetime = msg.metadata.time
+    print("er is een uplink binnen!")
     add_meting(msg.dev_id, temperature, humidity, datetime)
 
 
